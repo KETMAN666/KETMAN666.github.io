@@ -4,9 +4,9 @@
       .cls-1 {
         font-size: 91.667px;
         text-anchor: middle;
-        font-family: Algerian;
+        font-family: "Myriad Pro";
       }
     </style>
   </defs>
-  <text id="soft-mebel" class="cls-1" x="309.422" y="85.35"><tspan x="309.422">soft-mebel</tspan></text>
+  <text id="sofa-mebel" class="cls-1" x="322" y="78"><tspan x="322">sofa-mebel</tspan></text>
 </svg>
