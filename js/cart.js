@@ -24,11 +24,15 @@ function showCart() {
                 out += `<button data-id="${id}" class="del-goods">x</button>`;
                 out += `<img src="images\\${goods[id].img}">`;
                 out += ` ${goods[id].name}`;
+                out += `<button data-id="${id}" class="minus-goods">-</button>`;
                 out += ` ${cart[id]}`;
+                out += `<button data-id="${id}" class="plus-goods">+</button>`;
                 out += '<br>';
             }
             $('.main-cart').html(out);
             $('.del-goods').on('click', delGoods);
+            $('.plus-goods').on('click', plusGoods);
+            $('.minus-goods').on('click', minusGoods);
         });
     }
 }
@@ -37,6 +41,27 @@ function delGoods() {
     //удаляем товар из корзины
     var id = $(this).attr('data-id');
     delete cart[id];
+    saveCart();
+    showCart();
+}
+
+function plusGoods() {
+    //добавляем товар в корзине
+    var id = $(this).attr('data-id');
+    cart[id]++;
+    saveCart();
+    showCart();
+}
+
+function minusGoods() {
+    //уменьшаем товар в корзине
+    var id = $(this).attr('data-id');
+    if (cart[id]==1) {
+        delete cart[id];
+    }
+    else {
+        cart[id]--;
+    }
     saveCart();
     showCart();
 }
